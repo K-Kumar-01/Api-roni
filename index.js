@@ -2,6 +2,7 @@ const express = require("express");
 const client = require('./client');
 const assetdata = require('./api/assetdata');
 const app = express();
+const cors = require("cors");
 
 
 const port = process.env.PORT || 8000;
@@ -11,6 +12,7 @@ app.use(
         extended: true,
     })
 );
+app.use(cors());
 
 app.listen(port, async () => {
     console.log(`Example app listening at http://localhost:${port}`);

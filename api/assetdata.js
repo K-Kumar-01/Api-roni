@@ -6,7 +6,6 @@ const router = express.Router();
 router.get('/', async (req, res) => {
     try {
         let query = "SELECT * FROM data";
-        console.log(req.query);
         if (req.query?.from) {
             query += ` WHERE timestamp > '${req.query.from}';`;
         } else {
